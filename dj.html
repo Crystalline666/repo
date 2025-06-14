@@ -1,0 +1,408 @@
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { ArrowRight, CheckCircle, Star, Zap, Shield, Users, Mail, Phone, MapPin, Menu } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+
+export default function LandingPage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+          <div className="flex items-center space-x-2">
+            <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600"></div>
+            <span className="text-xl font-bold">ModernApp</span>
+          </div>
+
+          <nav className="hidden md:flex items-center space-x-6">
+            <Link href="#features" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Fitur
+            </Link>
+            <Link href="#about" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Tentang
+            </Link>
+            <Link href="#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Kontak
+            </Link>
+            <Button size="sm">Mulai Sekarang</Button>
+          </nav>
+
+          <Button variant="ghost" size="sm" className="md:hidden">
+            <Menu className="h-5 w-5" />
+          </Button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-20 md:py-32">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <Badge variant="secondary" className="w-fit">
+                  🚀 Solusi Terdepan 2024
+                </Badge>
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                  Transformasi Digital
+                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    {" "}
+                    Bisnis Anda
+                  </span>
+                </h1>
+                <p className="text-xl text-muted-foreground max-w-[600px]">
+                  Platform all-in-one yang membantu bisnis Anda berkembang dengan teknologi modern, analitik mendalam,
+                  dan otomasi cerdas.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                >
+                  Coba Gratis Sekarang
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button variant="outline" size="lg">
+                  Lihat Demo
+                </Button>
+              </div>
+
+              <div className="flex items-center space-x-6 pt-4">
+                <div className="flex items-center space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                  <span className="ml-2 text-sm text-muted-foreground">4.9/5 dari 1000+ pengguna</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl blur-3xl opacity-20"></div>
+              <Image
+                src="/placeholder.svg?height=600&width=800"
+                alt="Dashboard Preview"
+                width={800}
+                height={600}
+                className="relative rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 bg-slate-50">
+        <div className="container px-4 md:px-6">
+          <div className="text-center space-y-4 mb-16">
+            <Badge variant="secondary" className="w-fit mx-auto">
+              ✨ Fitur Unggulan
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Mengapa Memilih Kami?</h2>
+            <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
+              Dapatkan semua yang Anda butuhkan untuk mengembangkan bisnis dalam satu platform terintegrasi
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <div className="h-12 w-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
+                  <Zap className="h-6 w-6 text-blue-600" />
+                </div>
+                <CardTitle>Performa Lightning Fast</CardTitle>
+                <CardDescription>Aplikasi super cepat dengan loading time di bawah 2 detik</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    CDN Global
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    Caching Otomatis
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    Optimasi Database
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
+                  <Shield className="h-6 w-6 text-green-600" />
+                </div>
+                <CardTitle>Keamanan Tingkat Enterprise</CardTitle>
+                <CardDescription>Perlindungan data dengan enkripsi end-to-end dan compliance</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    SSL Certificate
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    2FA Authentication
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    GDPR Compliant
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <div className="h-12 w-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-purple-600" />
+                </div>
+                <CardTitle>Kolaborasi Tim</CardTitle>
+                <CardDescription>Bekerja bersama tim dengan tools kolaborasi yang powerful</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    Real-time Sync
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    Role Management
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+                    Activity Tracking
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-8 md:grid-cols-4 text-center">
+            <div className="space-y-2">
+              <div className="text-4xl font-bold text-blue-600">10K+</div>
+              <div className="text-sm text-muted-foreground">Pengguna Aktif</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl font-bold text-green-600">99.9%</div>
+              <div className="text-sm text-muted-foreground">Uptime</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl font-bold text-purple-600">500+</div>
+              <div className="text-sm text-muted-foreground">Perusahaan</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl font-bold text-orange-600">24/7</div>
+              <div className="text-sm text-muted-foreground">Support</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-slate-50">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <Badge variant="secondary" className="w-fit">
+                  📞 Hubungi Kami
+                </Badge>
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Siap Memulai?</h2>
+                <p className="text-lg text-muted-foreground">
+                  Tim ahli kami siap membantu Anda mengimplementasikan solusi terbaik untuk bisnis Anda.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="h-12 w-12 rounded-lg bg-blue-100 flex items-center justify-center">
+                    <Mail className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <div className="font-medium">Email</div>
+                    <div className="text-muted-foreground">hello@modernapp.com</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center">
+                    <Phone className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div>
+                    <div className="font-medium">Telepon</div>
+                    <div className="text-muted-foreground">+62 21 1234 5678</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="h-12 w-12 rounded-lg bg-purple-100 flex items-center justify-center">
+                    <MapPin className="h-6 w-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <div className="font-medium">Alamat</div>
+                    <div className="text-muted-foreground">Jakarta, Indonesia</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle>Kirim Pesan</CardTitle>
+                <CardDescription>Isi form di bawah dan tim kami akan menghubungi Anda dalam 24 jam</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Nama Lengkap</label>
+                    <Input placeholder="Masukkan nama Anda" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Email</label>
+                    <Input type="email" placeholder="nama@email.com" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Perusahaan</label>
+                  <Input placeholder="Nama perusahaan Anda" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Pesan</label>
+                  <Textarea placeholder="Ceritakan tentang kebutuhan bisnis Anda..." className="min-h-[120px]" />
+                </div>
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                  Kirim Pesan
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t bg-white">
+        <div className="container px-4 md:px-6 py-12">
+          <div className="grid gap-8 md:grid-cols-4">
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600"></div>
+                <span className="text-xl font-bold">ModernApp</span>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Platform transformasi digital terdepan untuk bisnis modern.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="font-medium">Produk</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Dashboard
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Analytics
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Automation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Integration
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="font-medium">Perusahaan</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Tentang Kami
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Karir
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Press
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="font-medium">Support</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Help Center
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Documentation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    API Reference
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Status
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
+            <p className="text-sm text-muted-foreground">© 2024 ModernApp. All rights reserved.</p>
+            <div className="flex space-x-6 mt-4 sm:mt-0">
+              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
+                Privacy Policy
+              </Link>
+              <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
